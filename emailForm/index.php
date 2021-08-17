@@ -10,8 +10,19 @@
 
 <body>
     <h1>Formulaire de contact</h1>
-    <form name="myForm" id="contactForm" action="process.php" onsubmit="return validateForm()" method="post">
+    <form name="myForm" id="contactForm" action="process.php"  onsubmit="return validateForm()" method="post">
        <table class="form-style">
+            <tr>
+             <td>
+                <label>
+                   Votre prénom <span class="required">*</span>
+                </label>
+             </td>
+             <td>
+                <input type="text" name="prenom" id="prenom" class="long"/>
+                <span class="error" id="errorname"></span>
+             </td>
+          </tr>
           <tr>
              <td>
                 <label>
@@ -19,7 +30,7 @@
                 </label>
              </td>
              <td>
-                <input type="text" name="name" id="name" class="long"/>
+                <input type="text" name="nom" id="name" class="long"/>
                 <span class="error" id="errorname"></span>
              </td>
           </tr>
@@ -49,6 +60,17 @@
              <tr>
              <td>
                 <label>
+                   Sujet 
+                </label>
+             </td>
+             <td>
+                <input type="text" name="sujet" id="sujet" class="long"/>
+                <span class="error" id="errorname"></span>
+             </td>
+          </tr>
+             <tr>
+             <td>
+                <label>
                    Message <span class="required">*</span>
                 </label>
              </td>
@@ -60,7 +82,7 @@
           <tr>
              <td></td>
              <td>
-                <input type="submit" value="Envoyer">      
+                <input type="submit" name="submit" value="Envoyer">      
                 <input type="reset" value="Réinitialiser"> 
                 <!-- <div id="msgSubmit" class="h3 text-center hidden">Message envoyé!</div> -->
                 <span class="success" id="success">Message envoyé !</span>

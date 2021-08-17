@@ -1,32 +1,16 @@
-<?php
-$name = $_POST["name"];
-$email = $_POST["email"];
-$message = $_POST["message"];
- 
-$EmailTo = "lotran31@hotmail.fr";
-$Subject = "Nouveau message reçu";
- 
+<?php 
+if(isset($_POST['submit'])){
+    $to = "lotran31@hotmail.fr"; 
+    $from = $_POST['email']; 
+    $prenom = $_POST['prenom'];
+    $nom = $_POST['nom'];
+    $subject = "Form submission";
+    $message = $_POST['message'];
+   
 
-$Body .= "Name: ";
-$Body .= $name;
-$Body .= "\n";
- 
-$Body .= "Email: ";
-$Body .= $email;
-$Body .= "\n";
- 
-$Body .= "Message: ";
-$Body .= $message;
-$Body .= "\n";
- 
-
-$success = mail($EmailTo, $Subject, $Body, "From:".$email);
- 
-// redirect to success page
-if ($success){
-   echo "success";
-}else{
-    echo "invalid";
+    $headers = "From:" . $from;
+    mail($to,$subject,$message,$headers);
+    echo "Email envoyé";
+    
 }
- 
 ?>

@@ -1,6 +1,6 @@
 $("#contactForm").submit(function(event){
     // cancels the form submission
-    event.preventDefault();
+    // event.preventDefault();
     submitForm();
 });
 
@@ -25,15 +25,6 @@ function submitForm(){
 function formSuccess(){
     document.getElementById('success').style.display = "block";
 }
-
-
-
-
-
-
-
-
-
 
 
 function validateForm()                                    
